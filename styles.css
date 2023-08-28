@@ -106,7 +106,7 @@ p {
 
 .play-button-container {
     text-align: center;
-    margin-top: 625px;
+    margin-top: 620px;
     position: relative;
     z-index: 2; /* Make sure it's higher than the gray background */
 }
