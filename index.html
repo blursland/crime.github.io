@@ -1,0 +1,81 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my socials</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="play-button-container">
+        <img id="play-button" src="play-button-icon.png" alt="Play Button">
+    </div>
+    <div class="container">
+        <header>
+            <img class="profile-picture" src="profile.jpg" alt="Profile Picture">
+            <h1>hxnted</h1>
+            <p>content creator/social media manager</p>
+        </header>
+        <nav>
+            <ul class="links">
+                <li>
+                    <a href="https://twitter.com/HxntedYT" target="_blank">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.gg/QheBYncKuD" target="_blank">
+                        <i class="fab fa-discord"></i> Discord
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </nav>
+</nav>
+</div>
+
+</nav>
+</div>
+<div class="play-button-container">
+    <img id="play-button" src="play-button-icon.png" alt="Play Button">
+</div>
+<audio id="audio-player">
+    <source src="song.mp3" type="audio/mpeg"> <!-- Replace "song.mp3" with your song file -->
+</audio>
+<footer>
+
+    <footer>
+        <p>&copy; website by hxnted</p>
+    </footer>
+    <script>
+        const audioPlayer = document.getElementById("audio-player");
+        const playButton = document.getElementById("play-button");
+        let isPlaying = false;
+    
+        playButton.addEventListener("click", () => {
+            if (isPlaying) {
+                audioPlayer.pause();
+                playButton.src = "play-button-icon.png"; // Replace with play button icon
+            } else {
+                audioPlayer.play();
+                playButton.src = "pause-button-icon.png"; // Replace with pause button icon
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
+    <script>
+        window.addEventListener("load", () => {
+            const contentElements = document.querySelectorAll(".container, .play-button-container, footer");
+            contentElements.forEach(element => {
+                element.classList.add("fade-in");
+            });
+        });
+    </script>
+    </body>
+    </html>
+    </body>
+    </html>
+</body>
+</html>
