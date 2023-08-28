@@ -31,6 +31,7 @@ body {
     color: white;
     padding: 2rem;
     border-radius: 10px;
+    box-shadow: 16 24px 16px rgba(0, 0, 0, 0.5); /* Add box shadow */
     max-width: 100%; /* Adjust this value as needed */
     max-width: 800px;
     margin: auto; /* Center horizontally */
@@ -67,19 +68,13 @@ p {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 1rem auto; /* Adjusted margin to provide space above links */
+    align-items: center; /* Center vertically */
+    margin: 0.5rem auto;
     position: relative;
 }
 
 .links li {
     margin: 5px; /* Add spacing between the buttons */
-}
-
-.github-link {
-    margin-top: -30px; /* Move GitHub link up */
-    padding-top: 30px; /* Increase top padding to balance the position */
-    margin-right: 30px; /* Move GitHub link to the right */
 }
 
 
@@ -104,24 +99,36 @@ p {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
+h2 {
+    font-size: 14px; /* Adjust the font size as needed */
+    opacity: 0.5; /* Lower opacity */
+    font-weight: 100; /* Font-semibold */
+}
+
 .play-button-container {
     text-align: center;
-    margin-top: 620px;
-    position: relative;
+    position: absolute; /* Position absolutely */
+    top: calc(50% + 170px); /* Adjust the value as needed */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center vertically */
     z-index: 2; /* Make sure it's higher than the gray background */
 }
 
-#play-button {
-    width: 30px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
+.play-button {
+    width: 30px;
+    height: 30px;
     cursor: pointer;
+    position: absolute;
+    bottom: -15px; /* Adjust this value as needed */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    color: white; /* Text color */
-    position: absolute;
+    color: white;
+    position: fixed; /* Use fixed position for a sticky footer */
     bottom: 0;
     width: 100%;
 }
