@@ -5,59 +5,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my socials</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file if needed -->
+</head>
+<body> 
+    <img src="image.jpg" alt="Image" id="display-image" class="hidden">
+    <script src="script.js"></script> <!-- Add your JavaScript file -->
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my socials</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file if needed -->
 </head>
 <body>
-    <div class="play-button-container">
-        <img class="play-button" src="play-button-icon.png" alt="Play Button">
-    </div>
     <div class="container">
         <header>
             <img class="profile-picture" src="profile.jpg" alt="Profile Picture">
             <h1>hxnted</h1>
             <p>content creator/social media manager</p>
-            <h2>fmod, elixir, eon, reksfn<h2>
+            <h2>fmod, elixir, eon, reksfn</h2>
         </header>
-        <nav>
-            <ul class="links">
-              <nav>
-    <ul class="links">
-        <li>
-            <a href="https://twitter.com/HxntedYT" target="_blank">
-                <i class="fab fa-twitter"></i> Twitter
+        <body>
+            <a href="https://twitter.com/hxntedyt" target="_blank">
+                <img class="glowing-image" src="photo1.jpg" alt="Photo 1">
             </a>
-        </li>
-        <li>
-            <a href="https://discord.gg/QheBYncKuD" target="_blank">
-                <i class="fab fa-discord"></i> Discord
+            <a href="https://github.com/hxnted" target="_blank">
+                <img class="glowing-image" src="photo2.jpg" alt="Photo 2">
             </a>
-        </li>
-    </ul>
-</nav>
-            </ul>
-        </nav>
+        </body>
+    </div>
+    <div id="overlay" class="overlay">
+        <div id="overlay-content" class="overlay-content">
+            <p>CLICK TO PROCEED</p>
+        </div>
     </div>
     <audio id="audio-player">
-        <source src="song.mp3" type="audio/mpeg"> <!-- Replace "song.mp3" with your song file -->
+        <source src="song.mp3" type="audio/mpeg"> <!-- Replace "your-song.mp3" with your song file -->
     </audio>
     <footer>
         <p>&copy; website by hxnted</p>
     </footer>
     <script>
-        const audioPlayer = document.getElementById("audio-player");
-        const playButtons = document.querySelectorAll(".play-button");
-        let isPlaying = false;
-
-        playButtons.forEach(playButton => {
-            playButton.addEventListener("click", () => {
-                if (isPlaying) {
-                    audioPlayer.pause();
-                    playButton.src = "play-button-icon.png"; // Replace with play button icon
-                } else {
+        document.addEventListener("DOMContentLoaded", function () {
+            const overlay = document.getElementById("overlay");
+            const overlayContent = document.getElementById("overlay-content");
+            const audioPlayer = document.getElementById("audio-player");
+        
+            // Show the overlay with "CLICK TO PROCEED"
+            overlay.style.opacity = 1;
+            overlayContent.style.opacity = 1;
+        
+            // Add a click event listener to the overlay
+            overlay.addEventListener("click", function () {
+                // Fade out the overlay
+                overlay.style.opacity = 0;
+                overlayContent.style.opacity = 0;
+                
+                setTimeout(() => {
+                    overlay.remove(); // Remove the overlay from the DOM after the fade-out
                     audioPlayer.play();
-                    playButton.src = "pause-button-icon.png"; // Replace with pause button icon
-                }
-                isPlaying = !isPlaying;
+                }, 500); // Adjust the duration as needed
             });
         });
 

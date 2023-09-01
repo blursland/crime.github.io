@@ -1,6 +1,6 @@
 /* CSS Reset */
 * {
-    margin: 0 1px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -20,38 +20,78 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: url('background.jpg') center/cover no-repeat;
+    background: url('image.jpg') center/cover no-repeat;
     overflow: hidden; /* Prevent scrollbars */
-    background-size: auto 130%; /* Stretch the background image vertically by 130% */
     background-size: cover; /* Maintain aspect ratio and cover the entire element */
+    position: relative; /* Set the position to relative to allow overlay */
+}
+
+/* Add a semi-transparent overlay with a darker color */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity as needed */
 }
 
 .container {
-    background-color: #1B1B20; /* Updated gray background color */
+    background-color: rgba(16, 16, 19, 0.6);
     color: white;
-    padding: 2rem;
+    padding: 1.5rem 3rem; /* Adjust the top and bottom padding to make it slightly smaller vertically */
     border-radius: 10px;
-    box-shadow: 16 24px 16px rgba(0, 0, 0, 0.5); /* Add box shadow */
-    max-width: 100%; /* Adjust this value as needed */
+    backdrop-filter: blur(2px); /* Adjust the blur amount for a thinner effect */
     max-width: 800px;
-    margin: auto; /* Center horizontally */
+    margin: auto;
     position: absolute;
+    text-align: center;
+    background: rgba(15, 15, 18, 0.6);
+    backdrop-filter: blur(4px); /* Adjust the blur amount for a thinner effect */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scaleZ(1.5); /* Scale the background vertically by 130% */
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4); /* Slightly bigger shadow */
-    text-align: center; /* Center-align content */
+    transform: translate(-50%, -50%) scale(1.1);
+    text-align: center;
 }
+
+
 
 header {
     margin-bottom: 2rem;
 }
 
+/* Style the icon buttons */
+.icon-button {
+    display: inline-block;
+    width: 15%; /* Set the width to 15% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 50px; /* Limit the maximum width if needed */
+    margin: 15px 0 20px 0; /* Adjust the margin to move the buttons 5px higher */
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Add transition for scale effect only */
+    cursor: pointer; /* Change cursor to pointer */
+    background-color: transparent; /* Remove the background color */
+    border: none; /* Remove border */
+    padding: 0; /* Remove padding */
+    outline: none; /* Remove the default outline */
+}
+
+.icon-button:hover {
+    transform: none; /* Remove the scale effect on hover */
+}
+
+/* Remove the button outline on focus */
+.icon-button:focus {
+    outline: none;
+}
+
+
 .profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-bottom: 1rem;
+    margin: -75px auto 1rem auto; /* Halfway inside the box and halfway outside */
     object-fit: cover;
     border: 3px solid white;
 }
@@ -64,40 +104,29 @@ p {
     opacity: 0.7; /* Lower opacity */
 }
 
-.links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Center vertically */
-    margin: 0.5rem auto;
-    position: relative;
+.glowing-image {
+    width: 15%; /* Set the width to 10% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100px; /* Limit the maximum width if needed */
+    margin: 20px 0; /* Add spacing between the images vertically */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transitions */
+    cursor: pointer; /* Change cursor to pointer */
 }
 
-.links li {
-    margin: 5px; /* Add spacing between the buttons */
+/* Add a subtle glow effect and scale on hover */
+.glowing-image:hover {
+    transform: scale(1.05); /* Scale the image slightly on hover */
 }
 
-
-.links .button-twitter,
-.links .button-discord {
-    margin: 0 30px; /* Add spacing between the buttons */
-    background-color: #141417; /* Updated button color */
+/* Adjust the margin between the images */
+.glowing-image:first-child {
+    margin-right: 3px; /* Add margin to the right of the first image */
 }
 
-.links a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #141417; /* Updated button color */
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.3s ease;
+.glowing-image:last-child {
+    margin-left: 3px; /* Add margin to the left of the last image */
 }
 
-.links a:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
 
 h2 {
     font-size: 14px; /* Adjust the font size as needed */
@@ -105,21 +134,40 @@ h2 {
     font-weight: 100; /* Font-semibold */
 }
 
-.play-button-container {
-    text-align: center;
+.invisible-button {
+    width: 0;
+    height: 0;
+    background-color: transparent;
     position: absolute;
-    top: calc(50% + 173px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    top: 0;
+    left: 0;
+}
+.hidden {
+    display: none;
 }
 
-.play-button {
-    width: 30px; /* Adjust the width as needed */
-    height: 30px; /* Adjust the height as needed */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the overlay is on top of everything */
+    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
+    opacity: 1; /* Start with full opacity */
+    transition: opacity 0.5s ease-in-out; /* Add a transition for opacity */
+}
+
+
+.overlay-content {
+    text-align: center;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-    /* Add this line to prevent the play button from getting scaled on smaller screens */
-    transform: scale(1);
 }
 
 footer {
