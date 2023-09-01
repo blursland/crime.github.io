@@ -105,9 +105,9 @@ p {
 }
 
 .glowing-image {
-    width: 15%; /* Set the width to 10% of the container width */
+    max-width: 40px; /* Set the maximum width */
+    width: 100px; /* Set the width to your desired size */
     height: auto; /* Maintain aspect ratio */
-    max-width: 100px; /* Limit the maximum width if needed */
     margin: 20px 0; /* Add spacing between the images vertically */
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transitions */
     cursor: pointer; /* Change cursor to pointer */
