@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my socials</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file if needed -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body> 
     <img src="image.jpg" alt="Image" id="display-image" class="hidden">
-    <script src="script.js"></script> <!-- Add your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
 
@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>my socials</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file if needed -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -44,7 +44,7 @@
         </div>
     </div>
     <audio id="audio-player">
-        <source src="song.mp3" type="audio/mpeg"> <!-- Replace "your-song.mp3" with your song file -->
+        <source src="song.mp3" type="audio/mpeg">
     </audio>
     <footer>
         <p>&copy; website by hxnted</p>
@@ -55,20 +55,20 @@
             const overlayContent = document.getElementById("overlay-content");
             const audioPlayer = document.getElementById("audio-player");
         
-            // Show the overlay with "CLICK TO PROCEED"
+
             overlay.style.opacity = 1;
             overlayContent.style.opacity = 1;
         
-            // Add a click event listener to the overlay
+
             overlay.addEventListener("click", function () {
                 // Fade out the overlay
                 overlay.style.opacity = 0;
                 overlayContent.style.opacity = 0;
                 
                 setTimeout(() => {
-                    overlay.remove(); // Remove the overlay from the DOM after the fade-out
+                    overlay.remove(); 
                     audioPlayer.play();
-                }, 500); // Adjust the duration as needed
+                }, 500); 
             });
         });
 
