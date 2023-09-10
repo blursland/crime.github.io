@@ -1,4 +1,4 @@
-/* CSS Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -21,12 +21,12 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     background: url('image.jpg') center/cover no-repeat;
-    overflow: hidden; /* Prevent scrollbars */
-    background-size: cover; /* Maintain aspect ratio and cover the entire element */
-    position: relative; /* Set the position to relative to allow overlay */
+    overflow: hidden; 
+    background-size: cover; 
+    position: relative; 
 }
 
-/* Add a semi-transparent overlay with a darker color */
+
 body::before {
     content: "";
     position: absolute;
@@ -40,15 +40,15 @@ body::before {
 .container {
     background-color: rgba(16, 16, 19, 0.6);
     color: white;
-    padding: 1.5rem 3rem; /* Adjust the top and bottom padding to make it slightly smaller vertically */
+    padding: 1.5rem 3rem;
     border-radius: 10px;
-    backdrop-filter: blur(2px); /* Adjust the blur amount for a thinner effect */
+    backdrop-filter: blur(2px);
     max-width: 800px;
     margin: auto;
     position: absolute;
     text-align: center;
     background: rgba(15, 15, 18, 0.6);
-    backdrop-filter: blur(4px); /* Adjust the blur amount for a thinner effect */
+    backdrop-filter: blur(4px); 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.1);
@@ -64,24 +64,24 @@ header {
 /* Style the icon buttons */
 .icon-button {
     display: inline-block;
-    width: 15%; /* Set the width to 15% of the container width */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 50px; /* Limit the maximum width if needed */
-    margin: 15px 0 20px 0; /* Adjust the margin to move the buttons 5px higher */
+    width: 15%; 
+    height: auto; 
+    max-width: 50px; 
+    margin: 15px 0 20px 0;
     text-decoration: none;
-    transition: transform 0.3s ease; /* Add transition for scale effect only */
-    cursor: pointer; /* Change cursor to pointer */
-    background-color: transparent; /* Remove the background color */
-    border: none; /* Remove border */
-    padding: 0; /* Remove padding */
-    outline: none; /* Remove the default outline */
+    transition: transform 0.3s ease; 
+    cursor: pointer;
+    background-color: transparent; 
+    border: none; 
+    padding: 0; 
+    outline: none; 
 }
 
 .icon-button:hover {
-    transform: none; /* Remove the scale effect on hover */
+    transform: none;
 }
 
-/* Remove the button outline on focus */
+
 .icon-button:focus {
     outline: none;
 }
@@ -91,47 +91,47 @@ header {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin: -75px auto 1rem auto; /* Halfway inside the box and halfway outside */
+    margin: -75px auto 1rem auto; 
     object-fit: cover;
     border: 3px solid white;
 }
 
 h1, h2 {
-    font-weight: 600; /* Font-semibold */
+    font-weight: 600; 
 }
 
 p {
-    opacity: 0.7; /* Lower opacity */
+    opacity: 0.7; 
 }
 
 .glowing-image {
-    max-width: 40px; /* Set the maximum width */
-    width: 100px; /* Set the width to your desired size */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px 0; /* Add spacing between the images vertically */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transitions */
-    cursor: pointer; /* Change cursor to pointer */
+    max-width: 40px; 
+    width: 100px; 
+    height: auto; 
+    margin: 20px 0; 
+    transition: box-shadow 0.3s ease, transform 0.3s ease; 
+    cursor: pointer; 
 }
 
-/* Add a subtle glow effect and scale on hover */
+
 .glowing-image:hover {
-    transform: scale(1.05); /* Scale the image slightly on hover */
+    transform: scale(1.05); 
 }
 
-/* Adjust the margin between the images */
+
 .glowing-image:first-child {
-    margin-right: 3px; /* Add margin to the right of the first image */
+    margin-right: 3px; 
 }
 
 .glowing-image:last-child {
-    margin-left: 3px; /* Add margin to the left of the last image */
+    margin-left: 3px; 
 }
 
 
 h2 {
-    font-size: 14px; /* Adjust the font size as needed */
-    opacity: 0.5; /* Lower opacity */
-    font-weight: 100; /* Font-semibold */
+    font-size: 14px; 
+    opacity: 0.5; 
+    font-weight: 100; 
 }
 
 .invisible-button {
@@ -152,14 +152,14 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ensure the overlay is on top of everything */
-    backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-    opacity: 1; /* Start with full opacity */
-    transition: opacity 0.5s ease-in-out; /* Add a transition for opacity */
+    z-index: 9999;
+    backdrop-filter: blur(10px); 
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; 
 }
 
 
@@ -174,7 +174,7 @@ footer {
     text-align: center;
     padding: 1rem;
     color: white;
-    position: fixed; /* Use fixed position for a sticky footer */
+    position: fixed; 
     bottom: 0;
     width: 100%;
 }
